@@ -2,7 +2,7 @@
 name = "hashed-rag"
 version = "0.1.0"
 description = "Retrieval-grounded sales assistant replacing the website contact form"
-requires-python = ">=3.11"
+requires-python = ">=3.11,<3.14"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
