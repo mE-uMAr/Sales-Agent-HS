@@ -1,0 +1,11 @@
+.venv/
+var/
+tests/
+.git/
+.env
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.py[cod]
+*.md
+!content/**/*.md

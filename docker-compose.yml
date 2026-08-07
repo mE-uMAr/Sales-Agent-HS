@@ -1,0 +1,28 @@
+services:
+  api:
+    build: ./backend
+    image: hashed-rag-api:latest
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      # Inside the container the working directory is /srv.
+      DATABASE_URL: sqlite+aiosqlite:////srv/var/app.db
+      ALLOWED_ORIGINS: http://localhost:3000,http://127.0.0.1:3000
+    volumes:
+      # Database and vector index survive a rebuild.
+      - hashed-var:/srv/var
+      # Edit content on the host; POST /v1/admin/reindex to pick it up without
+      # a restart. Pricing changes need no reindex at all.
+      - ./backend/content:/srv/content:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=4).status == 200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 40s
+      retries: 3
+
+volumes:
+  hashed-var:

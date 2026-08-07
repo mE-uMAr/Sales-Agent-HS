@@ -1,0 +1,249 @@
+# ─────────────────────────────────────────────────────────────────────────
+#  THE ONLY SOURCE OF NUMBERS.
+#
+#  The chatbot can never invent, round or interpolate a price: it may only
+#  relay a row from this file, returned verbatim by the `lookup_pricing` tool.
+#  Edit here and the bot quotes the new figure on the next request — no
+#  re-indexing, no redeploy.
+#
+#  market_price = what the visitor would typically pay elsewhere
+#  our_price    = what we are offering
+#  The discount is derived, never hand-written, so it cannot drift.
+# ─────────────────────────────────────────────────────────────────────────
+
+currency: USD
+
+# Shown alongside every quote so a figure is never presented as a fixed bid.
+disclaimer: >-
+  Indicative ranges based on comparable past projects. Final pricing is
+  confirmed after a scoping call.
+
+services:
+  - id: web_app
+    name: Custom Web Application
+    aliases:
+      - web app
+      - web application
+      - web development
+      - website build
+      - portal
+      - dashboard
+      - saas
+      - internal tool
+    summary: >-
+      Bespoke web applications — customer portals, internal tools, dashboards
+      and SaaS products — built as a React or Next.js frontend on a Python or
+      Node backend.
+    tiers:
+      - id: starter
+        name: Starter
+        scope: >-
+          Up to 6 screens, one integration, authentication and a single user
+          role. Suits an MVP or a focused internal tool.
+        market_price: 14000
+        our_price: 9500
+        typical_timeline: 6-8 weeks
+      - id: growth
+        name: Growth
+        scope: >-
+          Up to 20 screens, several third-party integrations, role-based
+          access, an admin panel and reporting.
+        market_price: 38000
+        our_price: 26500
+        typical_timeline: 3-4 months
+      - id: enterprise
+        name: Enterprise
+        scope: >-
+          Multi-tenant architecture, SSO, audit logging, SLA-backed support
+          and a dedicated delivery team.
+        market_price: 90000
+        our_price: 64000
+        typical_timeline: 5-8 months
+
+  - id: mobile_app
+    name: Mobile Application
+    aliases:
+      - mobile app
+      - ios app
+      - android app
+      - react native
+      - flutter
+      - app development
+    summary: >-
+      Cross-platform iOS and Android applications built with React Native or
+      Flutter, including store submission.
+    tiers:
+      - id: starter
+        name: Starter
+        scope: >-
+          Single platform, up to 8 screens, REST backend integration and store
+          submission.
+        market_price: 18000
+        our_price: 12500
+        typical_timeline: 8-10 weeks
+      - id: growth
+        name: Growth
+        scope: >-
+          Both platforms, offline support, push notifications, in-app payments
+          and analytics.
+        market_price: 45000
+        our_price: 32000
+        typical_timeline: 4-5 months
+
+  - id: ecommerce
+    name: E-commerce Build
+    aliases:
+      - ecommerce
+      - e-commerce
+      - online store
+      - shop
+      - shopify
+      - woocommerce
+      - storefront
+    summary: >-
+      Online stores on Shopify, WooCommerce or a bespoke headless stack, with
+      payments, shipping and inventory wired up.
+    tiers:
+      - id: starter
+        name: Starter
+        scope: >-
+          Themed storefront, up to 100 products, one payment gateway and one
+          shipping provider.
+        market_price: 9000
+        our_price: 6000
+        typical_timeline: 4-6 weeks
+      - id: growth
+        name: Growth
+        scope: >-
+          Custom theme, unlimited catalogue, multi-currency, ERP or inventory
+          sync and subscription support.
+        market_price: 28000
+        our_price: 19500
+        typical_timeline: 10-14 weeks
+
+  - id: ai_integration
+    name: AI & Chatbot Integration
+    aliases:
+      - ai
+      - artificial intelligence
+      - chatbot
+      - chat bot
+      - llm
+      - rag
+      - automation
+      - machine learning
+      - copilot
+    summary: >-
+      Retrieval-augmented assistants, document intelligence and workflow
+      automation built on top of your own data and existing systems.
+    tiers:
+      - id: starter
+        name: Pilot
+        scope: >-
+          One assistant over a single knowledge source, embedded in your site
+          or an internal tool, with an evaluation set.
+        market_price: 16000
+        our_price: 11000
+        typical_timeline: 4-6 weeks
+      - id: growth
+        name: Production
+        scope: >-
+          Multiple data sources, tool and API calling, human handoff, an
+          analytics dashboard and ongoing quality monitoring.
+        market_price: 42000
+        our_price: 29500
+        typical_timeline: 3-4 months
+
+  - id: ui_ux
+    name: UI/UX Design
+    aliases:
+      - design
+      - ui
+      - ux
+      - user interface
+      - user experience
+      - redesign
+      - branding
+      - figma
+    summary: >-
+      Research, wireframing, high-fidelity design and a reusable component
+      library, delivered in Figma.
+    tiers:
+      - id: starter
+        name: Design Sprint
+        scope: >-
+          Two-week sprint: research, user flows and high-fidelity designs for
+          the core journey.
+        market_price: 8500
+        our_price: 5500
+        typical_timeline: 2-3 weeks
+      - id: growth
+        name: Full Product Design
+        scope: >-
+          End-to-end design system, all screens, prototypes and developer
+          handoff documentation.
+        market_price: 24000
+        our_price: 16500
+        typical_timeline: 6-8 weeks
+
+  - id: cloud_devops
+    name: Cloud & DevOps
+    aliases:
+      - devops
+      - cloud
+      - aws
+      - azure
+      - infrastructure
+      - kubernetes
+      - ci/cd
+      - migration
+      - hosting
+    summary: >-
+      Cloud architecture, infrastructure-as-code, CI/CD pipelines and
+      migrations on AWS, GCP or Azure.
+    tiers:
+      - id: starter
+        name: Foundation
+        scope: >-
+          Infrastructure-as-code for one environment, a CI/CD pipeline and
+          monitoring with alerting.
+        market_price: 12000
+        our_price: 8000
+        typical_timeline: 3-5 weeks
+      - id: growth
+        name: Migration
+        scope: >-
+          Full migration of an existing workload, multi-environment setup,
+          autoscaling and a disaster-recovery plan.
+        market_price: 35000
+        our_price: 24000
+        typical_timeline: 2-4 months
+
+  - id: support
+    name: Maintenance & Support
+    aliases:
+      - support
+      - maintenance
+      - retainer
+      - sla
+      - bug fixes
+      - ongoing
+    summary: >-
+      Monthly retainers covering monitoring, security patching, bug fixes and
+      a pool of enhancement hours.
+    tiers:
+      - id: starter
+        name: Essential (monthly)
+        scope: >-
+          Uptime monitoring, security patches and 10 hours of work each month.
+          Next-business-day response.
+        market_price: 2200
+        our_price: 1500
+        typical_timeline: rolling monthly
+      - id: growth
+        name: Priority (monthly)
+        scope: >-
+          40 hours each month, four-hour response SLA and a named engineer.
+        market_price: 7500
+        our_price: 5200
+        typical_timeline: rolling monthly
